@@ -1,0 +1,33 @@
+def isLetterLower(char):
+    if char in "abcdefghijklmnopqrstuvwxyz":
+        return True
+    else:
+        return False
+
+
+def isLetterUpper(char):
+    if char in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        return True
+    else:
+        return False
+
+
+
+def CeasarCipher(str,num):
+    result = []
+    for char in str:
+        if isLetterLower(char) == True:
+            code = ord(char) - ord("a")
+            code += num
+            code %= ord("z") - ord("a") + 1
+            code += ord("a")
+            result.append(chr(code))
+        elif isLetterUpper(char) == True:
+            code = ord(char) - ord("A")
+            code += num
+            code %= ord("Z") - ord("A") + 1
+            code += ord("A")
+            result.append(chr(code))
+        else:
+            result.append(char)
+    return ''.join(result)

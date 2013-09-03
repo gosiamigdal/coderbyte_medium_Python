@@ -1,0 +1,13 @@
+def DashInsertII(num):
+	string = str(num)
+	result = []
+	for charIndex, char in enumerate(string):
+	 	result.append(char) 
+        if charIndex + 1 < len(string):
+            cur = int(char)
+            next = int(string[charIndex + 1])
+    		if cur % 2 != 0 and next % 2 != 0:
+    			result.append("-")
+    		elif cur % 2 == 0 and cur != 0 and next % 2 == 0 and next != 0:
+                result.append("*")
+	print ''.join(result)

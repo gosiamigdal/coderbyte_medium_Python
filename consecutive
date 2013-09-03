@@ -1,0 +1,7 @@
+def Consecutive(arr):
+	arr = sorted(arr)
+	currentAmount = len(arr)
+	wantedAmount = arr[currentAmount - 1] - arr[0]
+	wantedAmount += 1
+	makeConsecutive = wantedAmount - currentAmount
+	return makeConsecutive

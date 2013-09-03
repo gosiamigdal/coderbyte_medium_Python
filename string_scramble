@@ -1,0 +1,13 @@
+def StringScramble(str1, str2):
+	str1 = sorted(str1)
+	str2 = sorted(str2)
+	j = 0
+	for char in str2:
+		while j < len(str1):
+			if char == str1[j]:
+				break
+			j += 1
+		if j >= len(str1):
+			return False
+		j += 1
+	return True

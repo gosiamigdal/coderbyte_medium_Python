@@ -1,0 +1,23 @@
+def justBrackets(str):
+	result = []
+	for char in str:
+		if char in "()":
+			result.append(char)
+	return ''.join(result)
+
+
+
+def BracketMatcher(str):
+	str = justBrackets(str)
+	openBrackets = 0
+	for char in str:
+		if char == "(":
+			openBrackets += 1
+		elif openBrackets == 0:
+			return 0
+		else:
+			openBrackets -= 1
+	if openBrackets != 0:
+		return 0
+	else:
+		return 1
